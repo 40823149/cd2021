@@ -134,6 +134,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w10 << <a href='w10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2<br /><h1>task1</h1>
+<h4>參考40823131和40823136</h4>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char
 #打開文件，默認為讀取模式，因為txt內容無中文字符
 # no encoding = "UTF-8" is needed
@@ -144,27 +145,35 @@ with open("stage3_2a.txt") as ab:
     #將ab=stage3_2a.txt的資料讀取檔案，使用readline()讀取檔案中所有內容或是從檔案中讀取一行資料
     data = [a.replace('4823122','40823122') for a in data]
     #有一組學號錯誤更換( replace) 成新的學號
+    #這字串replace ('4823122',40823122')命名為data,然後for-loop到data中修改
+    #40823122修該成4823122
     data = [b.replace('\t\t','') for b in data]
-      #因為有一組少2個人,運用水平跳格來消去多餘的空格
+      #因為有一組有六個人比別組少2個人,把四個空格刪除
+      #(\t\t代表一個人)
      #print(data)
-#print(len(data))
+print(len(data))
+#說明有幾個元素
 for i in range(len(data)):
-    #假設一個範圍len(data)=6,變數為i,從0加到5,每次加1 [0,1,2,3,4,5]
+    #假設一個範圍len(data)=6,變數為自行假設(i),從0開始加到5,一直循環，每次加1 [0,1,2,3,4,5]
     group = data[i].rstrip("\n").split("\t") 
-    #先取出data list中的第i項進行處理,刪去元素中\n ,再找出新的元素
+    #data[0]='stage3_ag1\t...',data[1]='stage3_ag2\t...',.......
+    #先取出data list中的第i項進行處理,刪去元素中\n ,再利用\t進行切割，找出新的列表group
     #[rstrip(\n)=刪除字符串中結尾處，位於\n刪除序列的符號][split()=通過指定分隔符對字串進行切片]
     print('&lt;p&gt;'+group[0]+' | &lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;Website&lt;/a&gt; | &lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;Repository&lt;/a&gt;&lt;/p&gt;')
+    #group[0]=組名
+    #group[0][9]=取得組序
     #將 group list(串列)中的元素,將網站跟倉儲依序印出來 
-#[print()=用於打印輸出，最常見的一個函數][group[0]=匹配的整歌表達式的字串，group[]可以一次輸入多個組號，在這種情況下他將返回一個包含那些組所對應值得原素]
     for j in range(2,18,2):
-        #設一個範圍,(2到18,每次加2,但不能大於18)
+        #設一個範圍,以2為起始每次加2加到&lt;18，就是執行迴圈8次
         try:
             print('&lt;p&gt;'+group[j]+' | Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+' | Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt; &lt;/p&gt;')
-          #將 group list(串列)中的元素,將網站跟倉儲依序印出來
-#[print()=用於打印輸出，最常見的一個函數][group[0]=匹配的整歌表達式的字串，group[]可以一次輸入多個組號，在這種情況下他將返回一個包含那些組所對應值得原素]          
+          #group[j]=組員學號，j=2時學號為組長
+          #將 group list(串列)中的元素,將網站跟倉儲依序印出來        
         except:
           continue
-           #這邊使用try.....except,因為有一組6個人,如果沒用會失敗,最後用continue是要讓迴圈繼續跑</pre>
+           #for 迴圈會將range都跑完，所以要執行到最後一次才會跳出循環
+           #這邊使用try.....except,因為有一組6個人,如果沒用會出現error out of range(超出範圍),最後用continue是要讓迴圈繼續跑</pre>
+<p></p>
 <p>stage3_ag1 | <a href="https://40823131.github.io/stage3-ag1">Website</a> | <a href="https://github.com/40823131/stage3-ag1">Repository</a></p>
 <p>40823131 | Website:<a href="https://40823131.github.io/cd2021">40823131</a> | Repository:<a href="https://github.com/40823131/cd2021">40823131</a></p>
 <p>a40823112 | Website:<a href="https://a40823112.github.io/cd2021">a40823112</a> | Repository:<a href="https://github.com/a40823112/cd2021">a40823112</a></p>
@@ -216,8 +225,7 @@ for i in range(len(data)):
 <p>40823117 | Website:<a href="https://40823117.github.io/cd2021">40823117</a> | Repository:<a href="https://github.com/40823117/cd2021">40823117</a></p>
 <p>40823129 | Website:<a href="https://40823129.github.io/cd2021">40823129</a> | Repository:<a href="https://github.com/40823129/cd2021">40823129</a></p>
 <p>40823149 | Website:<a href="https://40823149.github.io/cd2021">40823149</a> | Repository:<a href="https://github.com/40823149/cd2021">40823149</a></p>
-<p>40823153 | Website:<a href="https://40823153.github.io/cd2021">40823153</a> | Repository:<a href="https://github.com/40823153/cd2021">40823153</a></p>
-<br />w10 << <a href='w10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2</div>
+<p>40823153 | Website:<a href="https://40823153.github.io/cd2021">40823153</a> | Repository:<a href="https://github.com/40823153/cd2021">40823153</a></p><br />w10 << <a href='w10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2</div>
         
     <!-- footer -->
       <div class="container">
