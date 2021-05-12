@@ -1,0 +1,270 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSiMDE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>40823149</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">40823149</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='stage1-7.html'>stage1-7</a><ul class='dropdown'><li><a href='小組-1.html'>小組-1</a><li><a href='w1.html'>w1</a><li><a href='w2.html'>w2</a><li><a href='w3.html'>w3</a></li></ul><li class='has-children'><a href='stage2-7.html'>stage2-7</a><ul class='dropdown'><li><a href='小組-2.html'>小組-2</a><li><a href='w5.html'>w5</a><li><a href='w6~w7.html'>w6~w7</a></li></ul><li class='has-children'><a href='stage3-6.html'>stage3-6</a><ul class='dropdown'><li><a href='小組-3.html'>小組-3</a><li class='has-children'><a href='w10.html'>w10</a><ul class='dropdown'><li><a href='task1.html'>task1</a><li><a href='task2.html'>task2</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">w10 << <a href='w10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2<br /><h1>task1</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char
+#打開文件，默認為讀取模式，因為txt內容無中文字符
+# no encoding = "UTF-8" is needed
+#無需編碼=“ UTF-8”
+with open("stage3_2a.txt") as ab: 
+    #開啟檔案stage3_2a.txt並命名為ab
+    data = ab.readlines()
+    #將ab=stage3_2a.txt的資料讀取檔案，使用readline()讀取檔案中所有內容或是從檔案中讀取一行資料
+    data = [a.replace('4823122','40823122') for a in data]
+    #有一組學號錯誤更換( replace) 成新的學號
+    data = [b.replace('\t\t','') for b in data]
+      #因為有一組少2個人,運用水平跳格來消去多餘的空格
+     #print(data)
+#print(len(data))
+for i in range(len(data)):
+    #假設一個範圍len(data)=6,變數為i,從0加到5,每次加1 [0,1,2,3,4,5]
+    group = data[i].rstrip("\n").split("\t") 
+    #先取出data list中的第i項進行處理,刪去元素中\n ,再找出新的元素
+    #[rstrip(\n)=刪除字符串中結尾處，位於\n刪除序列的符號][split()=通過指定分隔符對字串進行切片]
+    print('&lt;p&gt;'+group[0]+' | &lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;Website&lt;/a&gt; | &lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;Repository&lt;/a&gt;&lt;/p&gt;')
+    #將 group list(串列)中的元素,將網站跟倉儲依序印出來 
+#[print()=用於打印輸出，最常見的一個函數][group[0]=匹配的整歌表達式的字串，group[]可以一次輸入多個組號，在這種情況下他將返回一個包含那些組所對應值得原素]
+    for j in range(2,18,2):
+        #設一個範圍,(2到18,每次加2,但不能大於18)
+        try:
+            print('&lt;p&gt;'+group[j]+' | Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+' | Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt; &lt;/p&gt;')
+          #將 group list(串列)中的元素,將網站跟倉儲依序印出來
+#[print()=用於打印輸出，最常見的一個函數][group[0]=匹配的整歌表達式的字串，group[]可以一次輸入多個組號，在這種情況下他將返回一個包含那些組所對應值得原素]          
+        except:
+          continue
+           #這邊使用try.....except,因為有一組6個人,如果沒用會失敗,最後用continue是要讓迴圈繼續跑</pre>
+<p>stage3_ag1 | <a href="https://40823131.github.io/stage3-ag1">Website</a> | <a href="https://github.com/40823131/stage3-ag1">Repository</a></p>
+<p>40823131 | Website:<a href="https://40823131.github.io/cd2021">40823131</a> | Repository:<a href="https://github.com/40823131/cd2021">40823131</a></p>
+<p>a40823112 | Website:<a href="https://a40823112.github.io/cd2021">a40823112</a> | Repository:<a href="https://github.com/a40823112/cd2021">a40823112</a></p>
+<p>40823123 | Website:<a href="https://40823123.github.io/cd2021">40823123</a> | Repository:<a href="https://github.com/40823123/cd2021">40823123</a></p>
+<p>40823145 | Website:<a href="https://40823145.github.io/cd2021">40823145</a> | Repository:<a href="https://github.com/40823145/cd2021">40823145</a></p>
+<p>40823136 | Website:<a href="https://40823136.github.io/cd2021">40823136</a> | Repository:<a href="https://github.com/40823136/cd2021">40823136</a></p>
+<p>40823109 | Website:<a href="https://40823109.github.io/cd2021">40823109</a> | Repository:<a href="https://github.com/40823109/cd2021">40823109</a></p>
+<p>40823116 | Website:<a href="https://40823116.github.io/cd2021">40823116</a> | Repository:<a href="https://github.com/40823116/cd2021">40823116</a></p>
+<p>40823108 | Website:<a href="https://40823108.github.io/cd2021">40823108</a> | Repository:<a href="https://github.com/40823108/cd2021">40823108</a></p>
+<p>stage3_ag2 | <a href="https://40823151.github.io/stage3-ag2">Website</a> | <a href="https://github.com/40823151/stage3-ag2">Repository</a></p>
+<p>40823151 | Website:<a href="https://40823151.github.io/cd2021">40823151</a> | Repository:<a href="https://github.com/40823151/cd2021">40823151</a></p>
+<p>40623121 | Website:<a href="https://40623121.github.io/cd2021">40623121</a> | Repository:<a href="https://github.com/40623121/cd2021">40623121</a></p>
+<p>40871106 | Website:<a href="https://40871106.github.io/cd2021">40871106</a> | Repository:<a href="https://github.com/40871106/cd2021">40871106</a></p>
+<p>40823102 | Website:<a href="https://40823102.github.io/cd2021">40823102</a> | Repository:<a href="https://github.com/40823102/cd2021">40823102</a></p>
+<p>40823104 | Website:<a href="https://40823104.github.io/cd2021">40823104</a> | Repository:<a href="https://github.com/40823104/cd2021">40823104</a></p>
+<p>40823106 | Website:<a href="https://40823106.github.io/cd2021">40823106</a> | Repository:<a href="https://github.com/40823106/cd2021">40823106</a></p>
+<p>40823101 | Website:<a href="https://40823101.github.io/cd2021">40823101</a> | Repository:<a href="https://github.com/40823101/cd2021">40823101</a></p>
+<p>40823132 | Website:<a href="https://40823132.github.io/cd2021">40823132</a> | Repository:<a href="https://github.com/40823132/cd2021">40823132</a></p>
+<p>stage3_ag3 | <a href="https://40823119.github.io/stage3-ag3">Website</a> | <a href="https://github.com/40823119/stage3-ag3">Repository</a></p>
+<p>40823119 | Website:<a href="https://40823119.github.io/cd2021">40823119</a> | Repository:<a href="https://github.com/40823119/cd2021">40823119</a></p>
+<p>40823150 | Website:<a href="https://40823150.github.io/cd2021">40823150</a> | Repository:<a href="https://github.com/40823150/cd2021">40823150</a></p>
+<p>40823103 | Website:<a href="https://40823103.github.io/cd2021">40823103</a> | Repository:<a href="https://github.com/40823103/cd2021">40823103</a></p>
+<p>40823107 | Website:<a href="https://40823107.github.io/cd2021">40823107</a> | Repository:<a href="https://github.com/40823107/cd2021">40823107</a></p>
+<p>40523252 | Website:<a href="https://40523252.github.io/cd2021">40523252</a> | Repository:<a href="https://github.com/40523252/cd2021">40523252</a></p>
+<p>40823154 | Website:<a href="https://40823154.github.io/cd2021">40823154</a> | Repository:<a href="https://github.com/40823154/cd2021">40823154</a></p>
+<p>stage3_ag4 | <a href="https://40823142.github.io/stage3-ag4">Website</a> | <a href="https://github.com/40823142/stage3-ag4">Repository</a></p>
+<p>40823142 | Website:<a href="https://40823142.github.io/cd2021">40823142</a> | Repository:<a href="https://github.com/40823142/cd2021">40823142</a></p>
+<p>40823144 | Website:<a href="https://40823144.github.io/cd2021">40823144</a> | Repository:<a href="https://github.com/40823144/cd2021">40823144</a></p>
+<p>40823127 | Website:<a href="https://40823127.github.io/cd2021">40823127</a> | Repository:<a href="https://github.com/40823127/cd2021">40823127</a></p>
+<p>40823148 | Website:<a href="https://40823148.github.io/cd2021">40823148</a> | Repository:<a href="https://github.com/40823148/cd2021">40823148</a></p>
+<p>40823121 | Website:<a href="https://40823121.github.io/cd2021">40823121</a> | Repository:<a href="https://github.com/40823121/cd2021">40823121</a></p>
+<p>40823135 | Website:<a href="https://40823135.github.io/cd2021">40823135</a> | Repository:<a href="https://github.com/40823135/cd2021">40823135</a></p>
+<p>40823114 | Website:<a href="https://40823114.github.io/cd2021">40823114</a> | Repository:<a href="https://github.com/40823114/cd2021">40823114</a></p>
+<p>40823146 | Website:<a href="https://40823146.github.io/cd2021">40823146</a> | Repository:<a href="https://github.com/40823146/cd2021">40823146</a></p>
+<p>stage3_ag5 | <a href="https://40823111.github.io/stage3-ag5">Website</a> | <a href="https://github.com/40823111/stage3-ag5">Repository</a></p>
+<p>40823111 | Website:<a href="https://40823111.github.io/cd2021">40823111</a> | Repository:<a href="https://github.com/40823111/cd2021">40823111</a></p>
+<p>40823115 | Website:<a href="https://40823115.github.io/cd2021">40823115</a> | Repository:<a href="https://github.com/40823115/cd2021">40823115</a></p>
+<p>40823128 | Website:<a href="https://40823128.github.io/cd2021">40823128</a> | Repository:<a href="https://github.com/40823128/cd2021">40823128</a></p>
+<p>40823120 | Website:<a href="https://40823120.github.io/cd2021">40823120</a> | Repository:<a href="https://github.com/40823120/cd2021">40823120</a></p>
+<p>40823140 | Website:<a href="https://40823140.github.io/cd2021">40823140</a> | Repository:<a href="https://github.com/40823140/cd2021">40823140</a></p>
+<p>40823124 | Website:<a href="https://40823124.github.io/cd2021">40823124</a> | Repository:<a href="https://github.com/40823124/cd2021">40823124</a></p>
+<p>40823139 | Website:<a href="https://40823139.github.io/cd2021">40823139</a> | Repository:<a href="https://github.com/40823139/cd2021">40823139</a></p>
+<p>40823126 | Website:<a href="https://40823126.github.io/cd2021">40823126</a> | Repository:<a href="https://github.com/40823126/cd2021">40823126</a></p>
+<p>stage3_ag6 | <a href="https://40823152.github.io/stage3-ag6">Website</a> | <a href="https://github.com/40823152/stage3-ag6">Repository</a></p>
+<p>40823152 | Website:<a href="https://40823152.github.io/cd2021">40823152</a> | Repository:<a href="https://github.com/40823152/cd2021">40823152</a></p>
+<p>40823110 | Website:<a href="https://40823110.github.io/cd2021">40823110</a> | Repository:<a href="https://github.com/40823110/cd2021">40823110</a></p>
+<p>40823122 | Website:<a href="https://40823122.github.io/cd2021">40823122</a> | Repository:<a href="https://github.com/40823122/cd2021">40823122</a></p>
+<p>40823125 | Website:<a href="https://40823125.github.io/cd2021">40823125</a> | Repository:<a href="https://github.com/40823125/cd2021">40823125</a></p>
+<p>40823117 | Website:<a href="https://40823117.github.io/cd2021">40823117</a> | Repository:<a href="https://github.com/40823117/cd2021">40823117</a></p>
+<p>40823129 | Website:<a href="https://40823129.github.io/cd2021">40823129</a> | Repository:<a href="https://github.com/40823129/cd2021">40823129</a></p>
+<p>40823149 | Website:<a href="https://40823149.github.io/cd2021">40823149</a> | Repository:<a href="https://github.com/40823149/cd2021">40823149</a></p>
+<p>40823153 | Website:<a href="https://40823153.github.io/cd2021">40823153</a> | Repository:<a href="https://github.com/40823153/cd2021">40823153</a></p>
+<br />w10 << <a href='w10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
