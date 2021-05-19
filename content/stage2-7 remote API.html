@@ -134,33 +134,52 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">stage1-6 remote API << <a href='stage1-6 remote API.html'>Previous</a> <br /><h1>stage2-7 remote API</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sim as  vrep
-import sys
-# child threaded script: 
-#simExtRemoteApiStart(19999)
- 
-vrep.simxFinish(-1)
- 
-clientID = vrep.simxStart('127.0.0.1', 19999, True, True, 5000, 5)
- 
-if clientID!= -1:
-    print("Connected to remote server")
-else:
-    print('Connection not successful')
-    sys.exit('Could not connect')
- 
-errorCode,left_motor_handle=vrep.simxGetObjectHandle(clientID,'main',vrep.simx_opmode_oneshot_wait)
- 
-errorCode,right_motor_handle=vrep.simxGetObjectHandle(clientID,'bubbleRob_rightMotor',vrep.simx_opmode_oneshot_wait)
- 
-if errorCode == -1:
-    print('Can not find left or right motor')
-    sys.exit()
- 
-errorCode=vrep.simxSetJointTargetVelocity(clientID,left_motor_handle,0, vrep.simx_opmode_oneshot_wait)
-errorCode=vrep.simxSetJointTargetVelocity(clientID,right_motor_handle,10, vrep.simx_opmode_oneshot_wait)
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    corout=coroutine.create(coroutineMain)
+end
+
+function sysCall_actuation()
+    if coroutine.status(corout)~='dead' then
+        local ok,errorMsg=coroutine.resume(corout)
+        if errorMsg then
+            error(debug.traceback(corout,errorMsg),2)
+        end
+    end
+end
+
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+
+function coroutineMain()
+    -- Put some initialization code here
+
+
+    -- Put your main loop here, e.g.:
+    --
+    -- while true do
+    --     local p=sim.getObjectPosition(objHandle,-1)
+    --     p[1]=p[1]+0.001
+    --     sim.setObjectPosition(objHandle,-1,p)
+    --     sim.switchThread() -- resume in next simulation step
+    -- end
+end
+
+-- See the user manual or the available code snippets for additional callback functions and details
+-- Put some initialization code here:
+sim.setThreadSwitchTiming(2) -- Default timing for automatic thread switching
+
+-- Here we execute the regular thread code:
+res,err=xpcall(threadFunction,function(err) return debug.traceback(err) end)
+if not res then
+	sim.addStatusbarMessage('Lua runtime error: '..err)
+end
+
+-- Put some clean-up code here:
+simRemoteApi.start(19999)
 </pre>
 <p></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/2U1L__XEqp4" title="YouTube video player" width="560"></iframe></p>
 <p></p><br />stage1-6 remote API << <a href='stage1-6 remote API.html'>Previous</a> </div>
         
     <!-- footer -->
