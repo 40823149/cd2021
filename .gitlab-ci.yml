@@ -8,6 +8,6 @@ pages:
     paths:
     - public
   only:
-  - master
+  - main
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
