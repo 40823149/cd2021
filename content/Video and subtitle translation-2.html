@@ -135,7 +135,40 @@ img.add_border {
         </header>
     <div id="tipue_search_content">Video and subtitle translation-1 << <a href='Video and subtitle translation-1.html'>Previous</a> <a href='w16.html'>Next</a> >> w16<br /><h1>Video and subtitle translation-2</h1>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/eIZuz1XCd0w" title="YouTube video player" width="560"></iframe></p>
-<br />Video and subtitle translation-1 << <a href='Video and subtitle translation-1.html'>Previous</a> <a href='w16.html'>Next</a> >> w16</div>
+<p>title:Inverse kinematics for a 2-joint robot arm using algebra</p>
+<p>標題:用逆向運動學對2連桿機構手臂使用代數。</p>
+<p><span>Here we have the same two link robot as we just looked at but this time we're going tosolve it using an analytical approach , that is we're going to rely much more on algebra ,particular linear algebra rather than geometry</span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">在這裡，我們有剛剛看到的相同的兩個連桿機構，但這次我們將使用分析方法來解決它，也就是說，我們將更多地依賴代數，特別是線性代數而不是幾何<span>。</span><br/></span></pre>
+<p><span>We have an expression E , which is the homogeneous transformation which represents the pose of the robots endefector and we looked at this in the last lecture , we can write the endefector pose as a sequence of elementary homogeneous transformations</span><br/><strong></strong></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">我們有一個表達式 E ，它是表示機器人最終位姿的齊次變換，我們在上一課中看過這個，我們可以將最終位姿寫為一系列基本齊次變換<span>。</span></span></pre>
+<p><span>A rotation by Q1 , a translation along the X direction by A1 , a rotation by Q2 and then a translation in the X direction by A2</span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">Q1 旋轉，A1 沿 X 方向平移，Q2 旋轉，然後 A2 沿 X 方向平移<span>。</span></span></pre>
+<p><span>If I expand this out , multiply all the transformations together , I get the expression shown here ; a three by three homogeneous transformation matrix representing the pose of the robot's endefector</span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">如果我將其展開，將所有變換相乘，就會得到此處所示的表達式；一個三乘三的齊次變換矩陣，表示機器人的最終的姿態<span>。</span></span></pre>
+<p><span>Now for this particular two link robot , we are only interested in the position of its endefector , it's X and Y co - ordinate and they are these two elements within the homogeneous transformation matrix , so I'm going to copy those out </span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">現在對於這個特殊的雙連桿機器人，我們只對它的最終的位置感興趣，它是 X 和 Y 坐標，它們是齊次變換矩陣中的這兩個元素，所以我將把它們複製出來<span>。</span></span></pre>
+<p>So here again is our expression for X and Y and what we're going to do is a fairly common trick , we're going to square and add these two equations and I get a relationship that looks like this .</p>
+<p>所以這裡又是我們對 X 和 Y 的表達式，我們要做的是一個相當常見的技巧，我們要將它平方並將這兩個方程相加，我得到一個看起來像這樣的關係式。</p>
+<p>Now I can solve for the joint angle Q2 in terms of the endefector pose X and Y and the robot's constants A1 and A2.</p>
+<p>現在我可以根據最終位置X和Y以及機械手臂的常數A1及A2來求出關節角度Q2。</p>
+<p>Now what I'm going to do is apply the sum of angles identity .</p>
+<p>現在我要做的是應用角度之和的特性<span>。</span></p>
+<p>'m going to expand these terms, sine of Q1 plus Q2 or cos of Q1 plus Q2 and to make life a little bit easier, I'm going to make some substations, so where ever I had cos Q2, I'm going to write C2 and where ever I had sine Q2, I'm going to write S2.</p>
+<p>我將展開這些項，Q1 的正弦加 Q2 或 Q1 的餘弦加 Q2，為了更輕鬆一點，我將建立一些分部，所以只要有 cos Q2，我會將其取代為C2並且在有正弦Q2的地方，我會將其取代為S2<span>。</span></p>
+<p>It's a fairly common shorthand when people are looking at robot kinematic equations</p>
+<p>當人們解決機械手臂運動學方程式時，這是一個相當常見的快速記法<span>。</span></p>
+<p>And here are the equations after making those substitutions</p>
+<p>這是進行替換後的方程式</p>
+<p>Looking at these two equations, I can see that they fall into a very well known form and for that form there is a very well known solution.</p>
+<p>看看這兩個方程式，我可以看到它們屬於一個眾所周知的形式，對於這種形式，有一個淺顯易見的解決方案<span>。</span></p>
+<p><span>So I'm going to consider just one of the equations, the equation for Y and using our well known identity and it's solution, I can determine the values for the variables little a, little b and little c and once l've determined those, then I can just write down the solution for Q1, which x is the equivalent of theta in this particular case</span></p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span class="Y2IQFc" lang="zh-TW">所以我將只考慮其中一個方程，Y 的方程，並使用我們眾所周知的恆等式和它的解，我可以確定變量小 a、小 b 和小 c 的值，一旦我確定了這些，然後我可以寫下 Q1 的解決方案，在這種特殊情況下，x 相當於 theta<span>。</span></span></pre>
+<p>Here again is our expression for Q1, copied over from the previous slide and we may remember from earlier in our workings that we determined this particular relationship; X squared plus Y squared is equal to this particular complex expression</p>
+<p>這裡再次是我們對 Q1 的表達，從上一張幻燈片複製過來，我們可能還記得在我們早期的說明中，確定了這種特殊關係； X 平方加 Y 平方等於這個特定的複雜表達式<span>。</span></p>
+<p>So I can substitute that in and do some simplification and I end up with this slightly less complex expression for Q1</p>
+<p>因此，我可以將其替換並進行一些簡化，最終得到 Q1 的這個稍微不那麼複雜的表達式<span>。</span></p>
+<p>And it is the same expression that I got following the geometric approach in the previous section.</p>
+<p>這與我在上一節中遵循幾何方法求出的表達式一模一樣<span>。</span></p><br />Video and subtitle translation-1 << <a href='Video and subtitle translation-1.html'>Previous</a> <a href='w16.html'>Next</a> >> w16</div>
         
     <!-- footer -->
       <div class="container">
