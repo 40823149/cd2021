@@ -133,54 +133,23 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">stage1-6 remote API << <a href='stage1-6 remote API.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>stage2-7 remote API</h1>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-    corout=coroutine.create(coroutineMain)
-end
-
-function sysCall_actuation()
-    if coroutine.status(corout)~='dead' then
-        local ok,errorMsg=coroutine.resume(corout)
-        if errorMsg then
-            error(debug.traceback(corout,errorMsg),2)
-        end
-    end
-end
-
-function sysCall_cleanup()
-    -- do some clean-up here
-end
-
-function coroutineMain()
-    -- Put some initialization code here
-
-
-    -- Put your main loop here, e.g.:
-    --
-    -- while true do
-    --     local p=sim.getObjectPosition(objHandle,-1)
-    --     p[1]=p[1]+0.001
-    --     sim.setObjectPosition(objHandle,-1,p)
-    --     sim.switchThread() -- resume in next simulation step
-    -- end
-end
-
--- See the user manual or the available code snippets for additional callback functions and details
--- Put some initialization code here:
-sim.setThreadSwitchTiming(2) -- Default timing for automatic thread switching
-
--- Here we execute the regular thread code:
-res,err=xpcall(threadFunction,function(err) return debug.traceback(err) end)
-if not res then
-	sim.addStatusbarMessage('Lua runtime error: '..err)
-end
-
--- Put some clean-up code here:
-simRemoteApi.start(19999)
-</pre>
-<p></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/2U1L__XEqp4" title="YouTube video player" width="560"></iframe></p>
-<br />stage1-6 remote API << <a href='stage1-6 remote API.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+    <div id="tipue_search_content">w14 << <a href='w14.html'>Previous</a> <a href='六軸機械臂模型.html'>Next</a> >> 六軸機械臂模型<br /><h1>gitlab</h1>
+<p><span>1.先用gitlab創新倉儲，與github倉儲相同的名稱</span><img alt="" height="56" src="./../images/1623169067063.jpg" width="324"/></p>
+<p><img alt="" height="165" src="./../images/1623169194103.jpg" width="331"/></p>
+<p><img alt="" height="153" src="./../images/1623169283847.jpg" width="313"/></p>
+<p><span>2.去edit profile的ssh介面，加入ssh</span></p>
+<p><span><img alt="" height="209" src="./../images/1623332655818.jpg" width="285"/></span></p>
+<p><span><img alt="" height="154" src="./../images/1623332845545.jpg" width="354"/></span></p>
+<p><img alt="" height="141" src="./../images/1623332974635.jpg" width="353"/></p>
+<p><span>3.在倉儲禮打git remote add gitlab 網址，把url改成ssh的語法後git push gitlab</span></p>
+<p><span>4.cd2021 .gitlab-ci.yml這個檔案去到老師的倉儲下載檔案</span></p>
+<p><span>5.cd2021:把master改成main，存在倉儲底下</span></p>
+<p><span><img alt="" height="93" src="./../images/1623169619026.jpg" width="369"/></span></p>
+<p><span>6.git add /git commit /git push 與gitlab 就好</span></p>
+<p><span>7.到setting pages看就有網頁了(5/27 以前都能免費使用)</span></p>
+<p><span><img alt="" height="207" src="./../images/1623169839513.jpg" width="366"/></span></p>
+<p><span></span></p>
+<br />w14 << <a href='w14.html'>Previous</a> <a href='六軸機械臂模型.html'>Next</a> >> 六軸機械臂模型</div>
         
     <!-- footer -->
       <div class="container">
