@@ -720,5 +720,217 @@ print(theta[1], theta[2])
 <p><img alt="" height="193" src="/images/9363.png" width="579"/></p>
 <h3>Python remote API 逆向運動學函式</h3>
 <p><a href="https://drive.google.com/drive/folders/1ln6xIKhyaB-HgpCOUB1b8W_-F4clEfK9?usp=sharing">17</a></p>
-<p></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Kkb8f1WFTzs" title="YouTube video player" width="560"></iframe></p>
+<h2>w17</h2>
+<h3>stage3-ag6</h3>
+<p><a href="https://drive.google.com/drive/folders/113Pkrc5y0QZgErvXiQlMC-OJc2qJ7FFQ?usp=sharing">Basketball_machine</a></p>
+<p>學習程式書寫內容</p>
+<p>base程式</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     joint=sim.getObjectHandle('Revolute_joint')
+     --將joint定義名稱為Revolute_joint
+     proximity = sim.getObjectHandle("Proximity_sensor")
+     --將proximity定義名稱為Proximity_sensor
+     proximity0 = sim.getObjectHandle("Proximity_sensor0")
+     --將proximity0定義名稱為Proximity_sensor0
+     proximity1 = sim.getObjectHandle("Proximity_sensor1")
+     --將proximity1定義名稱為Proximity_sensor1
+     proximity2 = sim.getObjectHandle("Proximity_sensor2")
+     --將proximity2定義名稱為Proximity_sensor2
+     ball = sim.getObjectHandle("ball")
+     ball2 = sim.getObjectHandle("Sphere")
+     boallDummy = sim.getObjectHandle("Dummy")
+     --sim.sJointTargetVelocity(joint,5.5)
+     axis3=sim.getObjectHandle('slide')
+     distance3 = 0
+     number=-16
+     a = 0
+     --定義為三個變數
+     --print(auxiliaryData[1])
+     --if (auxiliaryData[1]==string.byte(' ')) then
+     
+
+end
+function sysCall_actuation()
+--感測器計分的功能
+-- Read Proximity sensor (0= nothing detected, 1 = object detected)
+    local res = sim.readProximitySensor(proximity)
+    local res0 = sim.readProximitySensor(proximity0)
+    local res1 = sim.readProximitySensor(proximity1)
+    local res2 = sim.readProximitySensor(proximity2)
+     if res == 1 or res0 == 1 or res1 == 1 or res2 == 1 then
+     #只要一個感測器感測到球的話
+     a = a+1
+     --感測器就會加一，因為原本感測器上面讀取分數是從0開始
+     print(a)
+     end
+ message,auxiliaryData=sim.getSimulatorMessage()
+ --這邊是鍵盤控制
+ if (message==sim.message_keypress) then
+      if (auxiliaryData[1]==2007) then
+      --2007=向上
+      sim.setJointTargetVelocity(joint,number)
+      end
+      if (auxiliaryData[1]==32) then
+      --32=空白建
+      sim.setJointTargetVelocity(joint,0)
+      end
+      if (auxiliaryData[1]==2008) then
+      --2008=向下
+      sim.setJointTargetVelocity(joint,1)
+      end
+      if (auxiliaryData[1]==114) then --r
+      --按r時會產生新的球
+      local insertedObjects = sim.copyPasteObjects({ball,ball2,ballDummy},0)
+      -- local disturbedCoordinates = {-2,0.02,4}
+      --修改球的生產球的位置{-2，0.02，4}，球直接產生在籃框上面
+      -- local disturbedCoordinates = {1,0,1}
+      --修改球的生產球的位置{1，2，1}
+      local disturbedCoordinates = {4,-2.35,1.5}
+      --修改球的生產球的位置{4，-2.35，1.5}，球會生產在機械手臂的滑軌上
+      sim.setObjectPosition(insertedObjects[1],-1,disturbedCoordinates)
+      end
+ end    
+
+
+end
+function sysCall_sensing()
+    -- put your sensing code here
+end
+
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+
+-- See the user manual or the available code snippets for additional callback functions and details
+</pre>
+<p>T1程式</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     j=sim.getObjectHandle('slide')
+     --將slide設定為j
+     d = 0--posion
+     a=10
+     b=0
+     --假設三個參數
+     --sim.sJointTargetVelocity(joint,5.5)
+end
+ 
+function sysCall_actuation()
+--actuation重複執行
+
+for i=0,1 do
+--執行for迴圈，當I等於0做到1
+      if (a==10) then
+      --當a等於10時
+      d = d - 0.0003
+      --d會每次都減0.0003
+      sim.setJointPosition(j, d)
+      if(d&lt;=-0.5)then
+      --移動到小於0.5時
+      a=0
+      --改成a=0
+      b=10
+      --改成b=10
+      end
+      end
+      if (b==10) then
+      --當b=10
+      d = d + 0.0003
+      --籃球框會從0.0003開始向右加
+      sim.setJointPosition(j, d)
+      if(d&gt;=0.5)then
+      #當超過0.5時就會變成a=10，b=0
+      a=10
+      b=0
+      end
+      end
+      end  
+end
+function sysCall_sensing()
+    -- put your sensing code here
+end
+ 
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details</pre>
+<p>MTB_robot程式</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     axis1=sim.getObjectHandle('MTB_axis1')
+     --axise1名稱為MTB_axis1
+     axis2=sim.getObjectHandle('MTB_axis2')
+     --axise2名稱為MTB_axis2
+     suctionPad=sim.getObjectHandle('suctionPad')
+     --suctionPad名稱為suctionPad
+     rotation1 = 0
+     rotation2 = 0
+     
+     deg = math.pi/180
+     --假設三個變數
+end
+function sysCall_actuation()
+ calibration = 0.01
+ --變數假設為0.01
+ message,auxiliaryData=sim.getSimulatorMessage()
+ if (message==sim.message_keypress) then
+      --print(auxiliaryData[1])--key
+      --啟動鍵盤控制
+      --if (auxiliaryData[1]==string.byte(' ')) then
+      --end
+      if (auxiliaryData[1]==119) then--w
+      rotation2 = rotation2 + 1*deg
+      --鍵盤按一次w時，角度+1
+      sim.setJointPosition(axis2, rotation2)
+      end
+      -- Press the "w" key to turn axis2 5 degrees counterclockwise
+      if (auxiliaryData[1]==115) then --s
+      rotation2 = rotation2 - 1*deg
+      --鍵盤按一次s時，角度-1
+      sim.setJointPosition(axis2, rotation2)
+      end
+      -- Press the "s" key to turn axis2 5 degrees clockwise
+      -- Press the "q" key to move up 0.01
+      if (auxiliaryData[1]==122) then --z 
+sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','true')
+      end -- Press "z" key to activate the suction pad
+      --鍵盤按Z時，會啟動吸盤程式
+      if (auxiliaryData[1]==120) then --x
+sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
+      end -- Press "x" key to deactivate the suction pad
+      --鍵盤按X時，會關掉吸盤程式
+      if (auxiliaryData[1]==49) then --1
+      V1=61.2012*deg
+      V2=49.5059*deg
+      --鍵盤按1時，機械手臂會旋轉到V1和V2
+      --角度是使用老師UK程式所得出的結果
+      sim.setJointPosition(axis1, V1)
+      sim.setJointPosition(axis2, V2)
+      end
+      if (auxiliaryData[1]==50) then --2
+      sim.setJointPosition(axis1, 0)
+      sim.setJointPosition(axis2, 0)
+      end
+      --if (auxiliaryData[1]==51) then --3
+      --V1=-158.2529*deg
+      --V2=87.7894*deg
+      --sim.setJointPosition(axis1, V1)
+      --sim.setJointPosition(axis2, V2)
+      --end
+      
+ end    
+
+end
+
+function sysCall_sensing()
+    -- put your sensing code here
+end
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+</pre>
+<p></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/b7ywCFEB6ks" title="YouTube video player" width="560"></iframe></p>
